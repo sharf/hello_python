@@ -6,3 +6,9 @@ def test_uppercase():
   pipeline = Pipeline()
   pipeline.run(input)
   eq_(input['UCASE'],'HELLO')
+
+def test_duplicate():
+  input = {'original': 'Hello'}
+  pipeline = Pipeline()
+  pipeline.run(input)
+  eq_(input['DUP'], 'Hello Hello')
