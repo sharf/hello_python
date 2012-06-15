@@ -10,5 +10,8 @@ class Step(object):
           if type(input) is dict and type(input['original']) is str:
             logging.info('Converting to uppercase')        
             input['UCASE'] = input['original'].upper()
+          else:
+            raise ValueError
+
         except KeyError:
           input['UCASE'] = ''

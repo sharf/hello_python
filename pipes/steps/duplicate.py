@@ -11,5 +11,8 @@ class Step(object):
             REPLICATE_COUNT = 2
             logging.info('Adding duplicate')        
             input['DUP'] = ' '.join(input['original'] for x in xrange(REPLICATE_COUNT))
+          else:
+            raise ValueError
+
         except KeyError:
           input['DUP'] = '' 
