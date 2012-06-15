@@ -4,7 +4,7 @@ import logging
 
 class Pipeline(object):
 
-    STEPS = ['pipes.steps.uppercase']
+    STEPS = ['pipes.steps.uppercase','pipes.steps.duplicate']
 
     def __init__(self):
         self.load_components()
