@@ -5,5 +5,10 @@ class Step(object):
 #Input:string
 #Output:STRING
     def run(self, input):
-        logging.info('Converting to uppercase')        
-        input['UCASE'] = input['original'].upper()
+        try:
+#Operations performed inside the if block are only valid for input as a dict of str values
+          if type(input) is dict and type(input['original']) is str:
+            logging.info('Converting to uppercase')        
+            input['UCASE'] = input['original'].upper()
+        except KeyError:
+          input['UCASE'] = ''

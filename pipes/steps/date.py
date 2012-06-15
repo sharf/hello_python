@@ -6,6 +6,14 @@ class Step(object):
 #Input:string
 #Output:string:MM-DD-YYYY
     def run(self, input):
-        logging.info('Appending date to string')        
-        today = datetime.datetime.now()
-        input['DATE'] = input['original'] + today.strftime(":%m-%d-%Y")
+        try:
+          today = datetime.datetime.now()
+#Operations performed inside the if block are only valid for input as a dict of str values
+          if type(input) is dict and type(input['original']) is str:
+            logging.info('Appending date to string')        
+            input['DATE'] = input['original'] + today.strftime(":%m-%d-%Y")
+          else:
+            raise ValueError
+
+        except KeyError:
+          input['DATE'] = today.strftime(":%m-%d-%Y")
