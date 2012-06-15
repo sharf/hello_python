@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-setup(name='pipeline',
+setup(name='hello_python',
       version='1.0',
       license='BSD',
       description='Pipeline library',
